@@ -1,2 +1,5 @@
 # DSA_Library
-A simple and clean C++ library of data structures and algorithms — built for learning, practicing, and using in projects.
+
+A modern C++ library that implements fundamental data structures (like vectors, stacks, queues, linked lists, trees, and graphs) and essential algorithms (such as sorting, searching, graph traversal, and dynamic programming).
+
+Perfect for practice, interviews, and learning core computer science concepts.
