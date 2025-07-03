@@ -176,3 +176,4 @@ int main()
     std::cout << vec.getFront() << " " << vec.getBack() << "\n"; // 0 50
     vec.right_rotate(2);
     vec.print(); // Output: 40 50 0 10 15
+}
