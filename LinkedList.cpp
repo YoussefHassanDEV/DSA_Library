@@ -98,45 +98,58 @@ public:
     }
     void insert(const T &value, int position)
     {
+        // 🔹 Insert at front if position is <= 0
         if (position <= 0)
         {
             push_front(value);
             return;
         }
-        Node *current = head.get();
-        for (int i = 0; i < position - 1 && current; ++i)
-            current = current->next.get();
-        if (!current)
+
+        // 🔹 Insert at back if position is out of bounds
+        if (position >= length)
         {
             push_back(value);
+            return;
         }
-        else
+
+        // 🔹 Traverse to position - 1
+        Node *current = head.get();
+        for (int i = 0; i < position - 1; ++i)
         {
-            auto newNode = std::make_unique<Node>(value);
-            newNode->next = std::move(current->next);
-            current->next = std::move(newNode);
-            if (!current->next->next)
-                tail = current->next.get();
-            length++;
+            current = current->next.get(); // Move one step forward
         }
+
+        // 🔹 Insert new node after 'current'
+        auto newNode = std::make_unique<Node>(value);
+        newNode->next = std::move(current->next); // Link to the rest of the list
+        current->next = std::move(newNode);       // Current now points to new node
+        length++;
     }
     void erase(int position)
     {
-        if (!head || position < 0)
+        // Case 1: Invalid position or empty list
+        if (!head || position < 0 || position >= length)
             return;
+        // Case 2: Erase the head node
         if (position == 0)
         {
             pop_front();
             return;
         }
+        // Step 1: Traverse to the node just before the one to erase
         Node *current = head.get();
-        for (int i = 0; i < position - 1 && current && current->next; ++i)
+        for (int i = 0; i < position - 1; ++i)
             current = current->next.get();
+        //Step 2: Check if the next node exists
         if (!current || !current->next)
-            return;
+            return; // This should never happen due to length check above
+
+        //Step 3: If deleting the tail, update tail pointer
         if (current->next.get() == tail)
             tail = current;
+        //Step 4: Delete the target node by skipping it
         current->next = std::move(current->next->next);
+        //Step 5: Decrease length
         length--;
     }
     void clear()
@@ -216,7 +229,6 @@ public:
         }
         return -1; // not found
     }
-
     void check_integrity() const
     {
         if (length == 0 && head)
@@ -240,6 +252,7 @@ public:
         }
     }
 };
+
 // #include "LinkedList.hpp"
 int main()
 {
