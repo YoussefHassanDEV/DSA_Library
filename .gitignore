@@ -1,0 +1,14 @@
+# Ignore executable files
+*.exe
+
+# Ignore debug files
+*.obj
+*.pdb
+
+# Ignore Visual Studio build output
+Debug/
+Release/
+.vscode/
+*.user
+*.suo
+*.log
