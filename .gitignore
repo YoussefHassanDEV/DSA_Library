@@ -12,3 +12,7 @@ Release/
 *.user
 *.suo
 *.log
+# Ignore temporary files
+*.tmp
+tempCodeRunnerFile*
+tempCodeRunnerFile.cpp

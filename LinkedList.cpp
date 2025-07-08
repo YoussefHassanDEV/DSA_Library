@@ -251,12 +251,34 @@ public:
             std::cout << "Error: Length mismatch, expected " << length << " but found " << count << "\n";
         }
     }
+    void is_same(const LinkedList<T> &other) const
+    {
+        if (length != other.length)
+        {
+            std::cout << "Lists are not the same, different lengths\n";
+            return;
+        }
+        Node *current1 = head.get();
+        Node *current2 = other.head.get();
+        while (current1 && current2)
+        {
+            if (current1->value != current2->value)
+            {
+                std::cout << "Lists are not the same, found different values\n";
+                return;
+            }
+            current1 = current1->next.get();
+            current2 = current2->next.get();
+        }
+        std::cout << "Lists are the same\n";
+
+    }
 };
 
 // #include "LinkedList.hpp"
 int main()
 {
-    LinkedList<int> list;
+    LinkedList<int> list,list1;
 
     list.push_back(10);
     list.push_back(20);
@@ -276,5 +298,6 @@ int main()
     list.search(15); // Output: found at index 1
     list.check_integrity();
     list.clear();
+    list.is_same(list1); // Output: Lists are the same
     std::cout << "Is empty: " << list.is_empty() << std::endl;
 }
