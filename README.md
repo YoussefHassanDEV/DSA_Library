@@ -4,20 +4,36 @@ A modern C++ library that implements fundamental data structures (like vectors, 
 
 Perfect for practice, interviews, and learning core computer science concepts.
 ✅ Key Data Structures Implemented:
-Vector – Dynamic array with random access and automatic resizing.
-Linked Lists – Singly and doubly linked lists with full pointer-level control.
-Stack – LIFO structure supporting push, pop, and top operations.
-Queue – FIFO implementation including circular queues and deques.
-Binary Tree – Generic tree node structure with traversal methods.
-Binary Search Tree (BST) – Sorted tree supporting insert, delete, and search.
-Heap – Min-heap and max-heap variants with priority queue behavior.
-Trie – Prefix tree optimized for string and dictionary operations.
-AVL Tree – Self-balancing BST for guaranteed logarithmic operations.
-Hash Table – Key-value store with chaining or open addressing.
+1-Vector – Dynamic array with random access and automatic resizing.
+
+2-Linked Lists – Singly and doubly linked lists with full pointer-level control.
+
+3-Stack – LIFO structure supporting push, pop, and top operations.
+
+4-Queue – FIFO implementation including circular queues and deques.
+
+5-Binary Tree – Generic tree node structure with traversal methods.
+
+6-Binary Search Tree (BST) – Sorted tree supporting insert, delete, and search.
+
+7-Heap – Min-heap and max-heap variants with priority queue behavior.
+
+8-Trie – Prefix tree optimized for string and dictionary operations.
+
+9-AVL Tree – Self-balancing BST for guaranteed logarithmic operations.
+
+10Hash Table – Key-value store with chaining or open addressing.
+
 ⚙️ Algorithms Included:
-Sorting Algorithms – Bubble, Selection, Insertion, Merge, Quick, Heap Sort, etc.
-Binary Search – Recursive and iterative implementations with edge case handling.
-Graph Algorithms – BFS, DFS, Dijkstra, Bellman-Ford, Kruskal, and more.
-Dynamic Programming – Classic problems like Knapsack, LCS, and Matrix DP.
-Backtracking – N-Queens, Sudoku solver, Subset generation, etc.
-Divide and Conquer – Efficient problem-solving patterns like Merge Sort and Quick Sort.
+1-Sorting Algorithms – Bubble, Selection, Insertion, Merge, Quick, Heap Sort, etc.
+
+2-Binary Search – Recursive and iterative implementations with edge case handling.
+
+3-Graph Algorithms – BFS, DFS, Dijkstra, Bellman-Ford, Kruskal, and more.
+
+4-Dynamic Programming – Classic problems like Knapsack, LCS, and Matrix DP.
+
+5-Backtracking – N-Queens, Sudoku solver, Subset generation, etc.
+
+6-Divide and Conquer – Efficient problem-solving patterns like Merge Sort and Quick Sort.
+
