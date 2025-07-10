@@ -4,6 +4,7 @@ A modern C++ library that implements fundamental data structures (like vectors, 
 
 Perfect for practice, interviews, and learning core computer science concepts.
 ✅ Key Data Structures Implemented:
+
 1-Vector – Dynamic array with random access and automatic resizing.
 
 2-Linked Lists – Singly and doubly linked lists with full pointer-level control.
@@ -25,6 +26,7 @@ Perfect for practice, interviews, and learning core computer science concepts.
 10Hash Table – Key-value store with chaining or open addressing.
 
 ⚙️ Algorithms Included:
+
 1-Sorting Algorithms – Bubble, Selection, Insertion, Merge, Quick, Heap Sort, etc.
 
 2-Binary Search – Recursive and iterative implementations with edge case handling.
