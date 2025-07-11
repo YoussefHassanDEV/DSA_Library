@@ -1,4 +1,10 @@
-# DSA_Library
+\[!\[License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+
+
+
+
+# DSA\_Library
 
 A modern C++ library that implements fundamental data structures (like vectors, stacks, queues, linked lists, trees, and graphs) and essential algorithms (such as sorting, searching, graph traversal, and dynamic programming).
 
@@ -38,4 +44,16 @@ Perfect for practice, interviews, and learning core computer science concepts.
 5-Backtracking – N-Queens, Sudoku solver, Subset generation, etc.
 
 6-Divide and Conquer – Efficient problem-solving patterns like Merge Sort and Quick Sort.
+
+## License
+
+
+
+This project is licensed under the \[Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
+
+
+
+You are free to use, modify, and distribute this code \*\*for non-commercial purposes\*\*, provided that proper attribution is given. \*\*Commercial use is strictly prohibited without explicit permission.\*\*
+
+
 
