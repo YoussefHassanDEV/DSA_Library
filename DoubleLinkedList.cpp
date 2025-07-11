@@ -33,6 +33,20 @@ public:
         if (next)
             next->prev = prev;
     }
+    void delete_and_link(Node *node)
+    {
+        if (!node)
+            return;
+        if (node->prev)
+            node->prev->next = std::move(node->next);
+        if (node->next)
+            node->next->prev = node->prev;
+        if (node == head.get())
+            head.reset(node->next.release());
+        if (node == tail)
+            tail = node->prev;
+        length--;
+    }
     void insert(const T &value, int position)
     {
         if (position <= 0)
@@ -107,11 +121,16 @@ public:
     {
         if (!head)
             return;
-        head = std::move(head->next);
-        if (head)
+        if (head->next)
+        {
+            head = std::move(head->next);
             head->prev = nullptr;
+        }
         else
+        {
+            head.reset();
             tail = nullptr;
+        }
         length--;
     }
     void pop_back()
@@ -147,14 +166,12 @@ public:
             pop_back();
             return;
         }
-
         Node *current = head.get();
         for (int i = 0; i < position; ++i)
         {
             current = current->next.get();
         }
-        link(current->prev, current->next.get());
-        length--;
+        delete_and_link(current);
     }
     void clear()
     {
@@ -288,7 +305,66 @@ public:
         print_recursive(head.get());
         std::cout << "\n";
     }
-
+    void delete_even()
+    {
+        Node *current = head.get();
+        while (current)
+        {
+            Node *next = current->next.get();
+            if (current->data % 2 == 0)
+            {
+                delete_and_link(current);
+            }
+            current = next;
+        }
+    }
+    void delete_odd()
+    {
+        Node *current = head.get();
+        while (current)
+        {
+            Node *next = current->next.get();
+            if (current->data % 2 != 0)
+            {
+                delete_and_link(current);
+            }
+            current = next;
+        }
+    }
+    void delete_even_positions()
+    {
+        Node *current = head.get();
+        int index = 0;
+        while (current)
+        {
+            Node *next = current->next.get();
+            if (index % 2 == 0)
+            {
+                delete_and_link(current);
+            }
+            current = next;
+            index++;
+        }
+    }
+    void delete_odd_positions()
+    {
+        insert_front(-1); // Dummy node to handle edge cases
+        delete_even_positions();
+        pop_front(); // Remove the dummy node
+    }
+    bool isPalindrome() const
+    {
+        Node *left = head.get();
+        Node *right = tail;
+        while (left && right && left != right && left->prev != right)
+        {
+            if (left->data != right->data)
+                return false;
+            left = left->next.get();
+            right = right->prev;
+        }
+        return true;
+    }
 };
 
 // DoubleLinkedList::DoubleLinkedList(/* args */)
