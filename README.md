@@ -7,7 +7,8 @@ A modern C++ library that implements fundamental data structures (like vectors, 
 Perfect for practice, interviews, and learning core computer science concepts.
 
 ---
-
+⚠️ Note: This repository is currently under active development. Features, structure, and documentation are subject to change.
+---
 ## ✅ Key Data Structures Implemented
 
 1. **Vector** – Dynamic array with random access and automatic resizing.  
